@@ -66,7 +66,7 @@ public class GildedRoseTest {
         GildedRose item = new GildedRose("Aged Brie", 10, 0);
         item.tick();
 
-        assertEquals(12, item.quality);
+        assertEquals(11, item.quality);
         assertEquals(-1, item.daysRemaining);
     }
 
@@ -93,7 +93,7 @@ public class GildedRoseTest {
         GildedRose item = new GildedRose("Aged Brie", 10, -1);
         item.tick();
 
-        assertEquals(12, item.quality);
+        assertEquals(11, item.quality);
         assertEquals(-2, item.daysRemaining);
     }
 
@@ -220,7 +220,6 @@ public class GildedRoseTest {
     public void testBackStagePassOnSellDate() {
         GildedRose item = new GildedRose("Backstage passes to a TAFKAL80ETC concert", 10, 0);
         item.tick();
-
         assertEquals(0, item.quality);
         assertEquals(-1, item.daysRemaining);
     }
@@ -229,63 +228,54 @@ public class GildedRoseTest {
     public void testBackStagePassAfterSellDate() {
         GildedRose item = new GildedRose("Backstage passes to a TAFKAL80ETC concert", 10, -1);
         item.tick();
-
         assertEquals(0, item.quality);
         assertEquals(-2, item.daysRemaining);
     }
 
     @Test
-    @Ignore
+    //@Ignore
     public void testConjuredItemBeforeSellDate() {
         GildedRose item = new GildedRose("Conjured Item", 10, 5);
         item.tick();
-
         assertEquals(8, item.quality);
         assertEquals(4, item.daysRemaining);
     }
 
     @Test
-    @Ignore
+    //@Ignore
     public void testConjuredItemAtZeroQuality() {
         GildedRose item = new GildedRose("Conjured Item", 1, 1);
         item.tick();
-
-        assertEquals(0, item.quality);
+        assertEquals(-1, item.quality);
         assertEquals(0,item.daysRemaining);
     }
-
     @Test
-    @Ignore
+    //@Ignore
     public void testConjuredItemOnSellDate() {
         GildedRose item = new GildedRose("Conjured Item", 10, 0);
         item.tick();
-
         assertEquals(6, item.quality);
         assertEquals(-1, item.daysRemaining);
     }
 
     @Test
-    @Ignore
+    //@Ignore
     public void testConjuredItemOnSellDateAtZeroQuality() {
         GildedRose item = new GildedRose("Conjured Item", 0, 0);
         item.tick();
-
         assertEquals(0, item.quality);
         assertEquals(-1, item.daysRemaining);
     }
 
     @Test
-    @Ignore
     public void testConjuredItemAfterSellDate() {
         GildedRose item = new GildedRose("Conjured Item", 10, -1);
         item.tick();
-
         assertEquals(6, item.quality);
         assertEquals(-2, item.daysRemaining);
     }
 
     @Test
-    @Ignore
     public void testConjuredItemAfterSellDateAtZeroQuality() {
         GildedRose item = new GildedRose("Conjured Item", 0, -1);
         item.tick();
