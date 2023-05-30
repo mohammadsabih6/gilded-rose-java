@@ -39,8 +39,6 @@ public class GildedRose {
             case "Sulfuras, Hand of Ragnaros":
                 Sulfuars_tick sulfuars_tick = new Sulfuars_tick(name, quality, daysRemaining);
                 sulfuars_tick.tick();
-                quality=sulfuars_tick.getQuantity();
-                daysRemaining=sulfuars_tick.getDaysRemaining();
                 break;    
             case "Conjured Item":
                 Conjured_tick conjured_tick=new Conjured_tick(name, quality, daysRemaining);

@@ -6,9 +6,12 @@ public class Brie_tick extends GildedRose {
     public void tick() {
         daysRemaining -= 1;
         
-        if (quality < 50) {
-            quality += 1;
+        if(quality<50){
+            quality=quality+1;
         }
+        // if(daysRemaining<0){
+        //     quality=quality+1;
+        // }
     }
     
     public int getQuality() {

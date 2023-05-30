@@ -4,11 +4,16 @@ public class Conjured_tick extends GildedRose {
     }
     public void tick(){
         daysRemaining-=1;
-        if(quality>0){
-            quality-=2;
+        if(quality==0){
+            return;
         }
+
+        if(quality>0){
+            quality=quality-2;
+        }
+        
         if(daysRemaining<=0 && quality>0){
-            quality-=2;
+            quality=quality-2;
         }
     }
     public int getQuality(){

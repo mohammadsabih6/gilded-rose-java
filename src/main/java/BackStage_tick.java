@@ -8,13 +8,18 @@ public class BackStage_tick extends GildedRose {
         if (quality >= 50) {
             return;
         }
-        quality += 1;
+        quality =quality + 1;
+        
         if (daysRemaining <= 10) {
-            quality += 1;
-        }if (daysRemaining < 5) {
-            quality += 1;
-        }if (daysRemaining < 0) {
-            quality = 0;
+            quality =quality+ 1;
+        }
+        
+        if (daysRemaining < 5) {
+            quality =quality + 1;
+        }
+        
+        if (daysRemaining < 0) {
+            quality = 0; 
         }
     }
 

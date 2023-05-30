@@ -6,10 +6,4 @@ public class Sulfuars_tick extends GildedRose {
     public void tick(){
     }
 
-    public int getQuantity(){
-        return quality;
-    }
-    public int getDaysRemaining(){
-        return daysRemaining;
-    }
 }
